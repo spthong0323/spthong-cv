@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary: #1a1e2e;
+    --accent: #2ecc71;
+    --text-main: #2c3e50;
+    --text-light: #7f8c8d;
+    --bg-light: #f8fafc;
+    --white: #ffffff;
+    --sidebar-bg: #fdfdfd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f1f5f9;
+    color: var(--text-main);
+    line-height: 1.45; /* Relaxed line height */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    padding: 30px 0; /* Increase outer padding */
+    font-size: 11px;
+}
+
+.cv-container {
+    width: 210mm;
+    height: 297mm;
+    margin: 0 auto;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 20px 40px; /* Reduced from 25px */
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.profile-pic {
+    width: 90px;
+    height: 90px; /* Slightly larger image */
+    border-radius: 50%;
+    border: 2px solid var(--white);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-info h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 4px; /* More space below name */
+    letter-spacing: 0.5px;
+}
+
+.header-info .title {
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-info {
+    margin-left: auto;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Spaced out contact details */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: flex-end;
+}
+
+/* Main Content */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 220px; /* Slightly wider sidebar */
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.left-col {
+    padding: 15px 30px; /* Reduced from 20px */
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Reduced from 18px */
+}
+
+.right-col {
+    background-color: var(--sidebar-bg);
+    padding: 15px 20px; /* Reduced from 20px */
+    border-left: 1px solid #edf2f7;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Reduced from 20px */
+}
+
+/* Section Styling */
+section h2 {
+    font-size: 14px; /* Standardized H2 Section Header */
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--primary);
+    border-bottom: 1.5px solid var(--accent);
+    padding-bottom: 2px;
+    display: inline-block;
+}
+
+section i {
+    color: var(--primary);
+    font-size: 12px;
+}
+
+.professional-summary p {
+    font-size: 11px; /* Standardized Body */
+    color: var(--text-main);
+    text-align: justify;
+}
+
+.section-note {
+    font-style: italic;
+    font-size: 9.5px;
+    margin-bottom: 6px;
+    color: var(--text-light);
+}
+
+/* Experience & Projects */
+.experience-item, .project-item {
+    margin-bottom: 5px; /* Reduced from 8px */
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;
+}
+
+.item-header h3 {
+    font-size: 12.5px; /* Standardized H3 Titles */
+    font-weight: 700;
+}
+
+.item-header .date {
+    font-size: 10px; /* Standardized Metadata */
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.company {
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 4px;
+    font-size: 11.5px;
+}
+
+.experience-item ul, .project-item ul {
+    list-style: none;
+    font-size: 10.5px;
+    padding-left: 0;
+}
+
+.experience-item li, .project-item li {
+    margin-bottom: 3px;
+    position: relative;
+    padding-left: 10px;
+}
+
+.experience-item li::before, .project-item li::before {
+    content: "•";
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+}
+
+.initiative-box {
+    background-color: #f0fdf4;
+    border-radius: 5px;
+    padding: 8px 10px;
+    margin-top: 6px;
+}
+
+.initiative-box p {
+    font-size: 10.5px;
+}
+
+.initiative-tag {
+    background-color: var(--accent);
+    color: white;
+    padding: 1px 6px;
+    border-radius: 8px;
+    font-size: 8.5px;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.impact-box {
+    border-left: 2px solid var(--accent);
+    padding: 4px 10px;
+    background-color: #f8fafc;
+    margin-top: 5px;
+}
+
+.impact-box p {
+    font-size: 10.5px;
+}
+
+.impact-box ul {
+    font-size: 10px;
+}
+
+.project-value {
+    margin-bottom: 4px;
+    font-size: 10.5px;
+}
+
+.project-details-box {
+    background: #f8fafc;
+    padding: 6px;
+    border-radius: 4px;
+}
+
+.project-details-title {
+    font-weight: 600;
+    margin-bottom: 2px;
+    font-size: 10.5px;
+}
+
+.project-focus {
+    margin-top: 4px;
+    font-size: 10.5px;
+}
+
+/* Right Column Items */
+.sidebar-section h3 {
+    font-size: 12px;
+    margin-bottom: 4px;
+    color: var(--primary);
+}
+
+.competency-item {
+    margin-bottom: 6px;
+}
+
+.competency-item h4 {
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.competency-item p {
+    font-size: 9.5px;
+    color: var(--text-light);
+}
+
+.strength-list, .attitude-list {
+    list-style: none;
+    font-size: 10px;
+}
+
+.strength-list li, .attitude-list li {
+    margin-bottom: 3px;
+    padding-left: 10px;
+    position: relative;
+}
+
+.strength-list li::before, .attitude-list li::before {
+    content: "•";
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+}
+
+.education-item h3 {
+    font-size: 11px;
+}
+
+.education-item p {
+    font-size: 10px;
+    color: var(--text-light);
+}
+
+.education-item .date {
+    font-size: 9.5px;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.languages p {
+    font-size: 10.5px;
+    margin-bottom: 2px;
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+@media print {
+    body {
+        background: none;
+        padding: 0;
+    }
+    .cv-container {
+        margin: 0;
+        box-shadow: none;
+        width: 210mm;
+        height: 297mm;
+    }
+}
